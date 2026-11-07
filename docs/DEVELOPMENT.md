@@ -1,10 +1,14 @@
 # 开发约定 / Development Guide
 
-**Status:** Project bootstrap, documentation only / 项目初始化，目前只有文档
+**Status:** M1 local Companion validation code added; other milestones remain planned / 已加入 M1 本地 Companion 验证代码；其他里程碑仍为规划
+
+M1 安装、CLI、Mock/真实测试和限制见 [companion/README.md](../companion/README.md)。开发规范与产品范围不变。 / See [companion/README.md](../companion/README.md) for M1 installation, CLI, Mock/actual tests and limitations. The development rules and product scope remain unchanged.
+
+**2026-11-07 阶段交付 / Interim submission:** 已完成、未完成、本轮修改和测试证据见 [SUBMISSION_STATUS.md](SUBMISSION_STATUS.md)；M1 进行中，未完整验收。 / See the report for implemented work, gaps, changes and verification; M1 remains in progress, not fully qualified.
 
 ## 简体中文
 
-### 1. 仓库结构（计划，非已实现文件）
+### 1. 仓库结构（M1 已实现，其余为计划）
 
 ```text
 AI-Passport-Spotify-Controller/
@@ -15,7 +19,7 @@ AI-Passport-Spotify-Controller/
 │   ├── PROTOCOL.md
 │   ├── ROADMAP.md
 │   └── DEVELOPMENT.md
-├── companion/                # 未来：Windows Python 服务
+├── companion/                # M1：本地 Windows Python CLI，无网络服务
 │   ├── src/
 │   └── tests/
 ├── firmware/                 # 未来：ESP-IDF / LVGL 应用
@@ -23,7 +27,7 @@ AI-Passport-Spotify-Controller/
 └── .github/workflows/        # 未来：静态检查和构建
 ```
 
-**当前只创建 README 与 docs 下文档**。以上代码目录、命令和产物均应在对应里程碑实现后才标为可用。
+**M1 已新增 `companion/` 本地实现与测试**；`firmware/`、`tools/` 和 CI 目录仍是规划。其他命令和产物仅在对应里程碑实现后才标为可用。
 
 ### 2. 开发环境建议
 
@@ -56,7 +60,7 @@ AI-Passport-Spotify-Controller/
 
 在 `companion/` 构建**仅本地运行**的 Python 验证程序，能够输出歌曲元数据、当前播放位置、播放状态、封面字节是否存在、LRCLIB 的两行同步歌词，并能以三个命令模拟 UP/OK/DOWN；实现 UP 两秒状态机。通过后再引入网络，不要先写固件。
 
-**暂不提供安装/刷机命令，因为仓库目前没有代码或固件。**
+**本地 Companion 安装和测试命令见其 README；仍不提供固件刷机命令，因为本轮没有固件。**
 
 ### 6. 变更管理
 
@@ -68,7 +72,7 @@ AI-Passport-Spotify-Controller/
 
 ### 1. Proposed layout
 
-The tree above describes the **intended** future `companion/`, `firmware/`, `tools/` and `.github/` paths. **Only README and docs exist at project kickoff.** Do not mistake proposed source directories for implemented code.
+The tree above describes the original intended layout. **M1 now includes local `companion/` code and tests**; `firmware/`, `tools/` and `.github/` remain planned. Do not mistake those proposed directories for implemented code.
 
 ### 2. Suggested environment
 
@@ -93,7 +97,7 @@ For Python, use type hints, structured diagnostics, adapters and deterministic t
 
 Implement a **local-only** `companion/` Python probe that reads current player metadata/status/position/art availability, matches two LRCLIB lyric lines, and allows simulated UP/OK/DOWN with the exact two-second UP state machine. Add network features only after this passes.
 
-**There are no runnable installation or flashing steps yet: this repository is documentation-only.**
+**Local Companion installation and test commands are in its README. There are still no firmware flashing steps because firmware is outside this milestone.**
 
 ### 6. Change process
 

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "passport-companion"
+version = "0.1.0"
+description = "Local-only Windows Spotify validation companion for AI Passport"
+requires-python = ">=3.11"
+dependencies = [
+    "libspotifyctl==0.3.4; sys_platform == 'win32' and platform_machine == 'AMD64'",
+    "Pillow==12.0.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2"]
+
+[project.scripts]
+passport-companion = "passport_companion.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "integration: opt-in actual Windows Spotify tests, not Mock tests",
+    "controls: opt-in tests that alter local Spotify playback",
+]

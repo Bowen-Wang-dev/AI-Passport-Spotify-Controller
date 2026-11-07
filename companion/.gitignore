@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+# Runtime content is never source material.
+*.lrc
+*.jpg
+*.jpeg
+*.png

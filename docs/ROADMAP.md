@@ -9,14 +9,14 @@
 | 里程碑 | 工作 | 状态 |
 | --- | --- | --- |
 | **M0** | 需求冻结、文档和项目初始化 | **已完成文档初始化** |
-| **M1** | Windows Companion 本地能力验证 | 未开始 |
+| **M1** | Windows Companion 本地能力验证 | **进行中：已有本地原型及离线测试；未完整验收** |
 | **M2** | AI Passport 固件静态 UI 与按键 | 未开始 |
 | **M3** | Wi-Fi 联调和真实 Spotify 数据 | 未开始 |
 | **M4** | 稳定性、打包、刷机说明和 v0.1 验收 | 未开始 |
 
-以上不代表代码已实现或经过测试。
+**状态更新：2026-11-07。** M1 代码和离线测试已存在，本次默认测试为 **246 passed / 2 skipped**；两项真实 Windows 集成测试本次未运行。历史实机记录、未完成项和本轮修改见 [阶段提交说明](SUBMISSION_STATUS.md)。M1 仍需真实同步歌词匹配、重启/广告/长期稳定性验证及独立评审；不能把“已实现”当作“完整验收通过”。M2–M4 仍未完成。
 
-### M0：立项与规范（本轮）
+### M0：立项与规范（初始化阶段）
 
 产物：中英双语 README、产品需求、架构、协议、开发说明与路线图。功能范围锁定为**显示+三键控制**，不做设备端音频。
 
@@ -90,10 +90,12 @@
 | Gate | Deliverable | Status |
 | --- | --- | --- |
 | **M0** | Bilingual scope and project documentation | Documentation initialized |
-| **M1** | Validate Windows Spotify, controls, art and synced lyrics locally | Not started |
+| **M1** | Validate Windows Spotify, controls, art and synced lyrics locally | **In progress: local prototype and offline tests available; not fully qualified** |
 | **M2** | Validate on-device static UI, buttons, font and memory | Not started |
 | **M3** | Integrate Wi-Fi protocol, live state and actual controls | Not started |
 | **M4** | Regression tests, reproducible builds and release instructions | Not started |
+
+**Status updated 2026-11-07:** the default offline suite produced **246 passed / 2 skipped**; real Windows integration was not rerun. M1 still needs live synced-lyric matching, restart/ad/soak validation and independent review. See the [interim submission report](SUBMISSION_STATUS.md) for the distinction between implementation, historical evidence and acceptance. M2–M4 remain incomplete.
 
 **M0:** Freeze exactly two functions: **display + simple control**. Exclude all device audio behavior. Keep README, specs, architecture and protocol mutually consistent.
 

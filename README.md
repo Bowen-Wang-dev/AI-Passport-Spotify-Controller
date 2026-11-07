@@ -2,7 +2,9 @@
 
 **简体中文** | [English](#english)
 
-> **项目状态 / Project status:** 立项与设计阶段 / Planning & specification · **MVP target:** v0.1 · **Kickoff:** 2026-11-05
+> **项目状态 / Project status:** 阶段提交；M1 本地原型已实现但未完整验收，非完整 MVP / Interim submission; M1 local prototype implemented, not fully qualified or a complete MVP · **MVP target:** v0.1 · **Kickoff:** 2026-11-05
+
+**教授审阅 / Submission review:** [阶段提交说明：已做、未做、修改及验证结果 / Interim submission report](docs/SUBMISSION_STATUS.md) · **As of 2026-11-07**
 
 将 **FOLOTOY AI Passport** 变成一个适用于 Windows 桌面版 Spotify 的 **迷你正在播放显示屏 + 三键无线遥控器**。
 
@@ -85,10 +87,12 @@ Windows Companion 负责 Spotify 集成、歌词匹配/时间同步、图片缩�
 | [docs/PROTOCOL.md](docs/PROTOCOL.md) | v0.1 WebSocket/HTTP 消息草案 |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | 分阶段实施计划、交付物、测试清单 |
 | [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) | 开发约定、建议目录、验证先后顺序 |
+| [docs/SUBMISSION_STATUS.md](docs/SUBMISSION_STATUS.md) | 阶段交付：已完成、未完成、本轮修改、验证证据及剩余工作 |
+| [companion/README.md](companion/README.md) | M1 本地 CLI 安装、Mock/真实测试、版本与已知限制 |
 
 ### 当前状态
 
-**这是项目立项文档仓库，尚无可刷写固件、Windows 安装包或经过真机验证的 MVP。** 相关技术库是候选集成，并不表示兼容性已经验证。请勿将规划中的功能当作已经实现。
+**已加入仅本地运行的 M1 Windows Companion、CLI 和自动化测试，详见 [companion/README.md](companion/README.md)。** 该文档区分 Mock 测试与真实 Windows Spotify 结果。尚无固件、Windows 安装包、网络服务或经过设备验收的完整 MVP；ROADMAP 验收关卡不自动勾选。请勿将其他规划功能当作已经实现。
 
 ### 参考与鸣谢
 
@@ -139,7 +143,9 @@ Spotify Desktop plays all audio on Windows. A Python Windows Companion reads loc
 - [Local protocol draft](docs/PROTOCOL.md)
 - [Roadmap & acceptance gates](docs/ROADMAP.md)
 - [Development guide](docs/DEVELOPMENT.md)
+- [Interim submission: completed work, gaps, changes and verification](docs/SUBMISSION_STATUS.md)
+- [M1 Companion installation, CLI, tests and limitations](companion/README.md)
 
 ### Status, dependencies and licensing
 
-**Planning only.** No working firmware, Windows build, or hardware-tested MVP is currently included. All integrations remain subject to validation. This independent community project is not affiliated with Spotify or FOLOTOY. Refer to the upstream links above and respect third-party licenses, lyric availability, artwork rights and service policies. **A license for this repository has not been selected.**
+**M1 local validation code is available.** See [companion/README.md](companion/README.md) for installation, the CLI, separate Mock/actual Windows test evidence and limitations. No firmware, Windows installer, network server or device-qualified complete MVP is included; roadmap gates are not automatically checked. This independent community project is not affiliated with Spotify or FOLOTOY. Respect third-party licenses, lyric availability, artwork rights and service policies. **A license for this repository has not been selected.**
